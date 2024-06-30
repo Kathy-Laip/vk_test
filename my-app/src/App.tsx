@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className='blockBtn'>
+      {/* <div className='blockBtn'>
         <Button text="Что сделать" size="28" color="primary" colorCounter='primary'>
           <Label/>
         </Button>
@@ -27,7 +27,13 @@ function App() {
         </Button>
       </div>
       <div className='blockBtn'>
-        <Button text="Что сделать" size="56" color="primary" colorCounter='primary'>
+        <Button text="Что сделать" size="36" color="primary" colorCounter='primary' disFlag='0'>
+          <Label/>
+          <Counter/>
+        </Button>
+      </div> */}
+      <div className='blockBtn'>
+        <Button text="Что сделать" size="56" color="secondary" colorCounter='primary'>
           <Label/>
           <Counter/>
         </Button>

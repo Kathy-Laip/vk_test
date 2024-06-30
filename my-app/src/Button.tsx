@@ -1,12 +1,13 @@
 import React, {FC, ReactNode, useEffect, useMemo, useState} from "react";
-import { Label } from './Label';
-import { Counter } from './Counter';
+import shape from './image/shape.svg'
+
 
 type BtnType = {
     text: string,
     size: string,
     color: string,
     colorCounter: string,
+    disFlag?: string,
     children: ReactNode
 }
 
@@ -68,17 +69,30 @@ export const Button: React.FC<BtnType> = (props) => {
               })
         } else if(props.color === 'secondary'){
             setStyle(prev => {
-                return {...prev, backgroundColor: "rgba('#8366561', 0.12)", color: 'black'}
+                return {...prev, backgroundColor: "rgba(131, 102, 86, 0.12)", color: 'black'}
             })
+            document.getElementById('svg')!.style.stroke = 'black'
         }
     }, [color])
 
+    useEffect(() =>{if(props.disFlag === '0'){
+        document.getElementById('bt1')?.classList.add('disabled')
+    }}, [])
+
+    const clickbtn = () => {
+        document.getElementById('label')!.style.display = 'none'
+        document.getElementById('counter')!.style.display = 'none'
+        document.getElementById('divLoad')!.style.display = 'block'
+    } 
+
     return (
-        <div className="btn" tabIndex={1} style={style}>
-            {/* <div className="divLoad"><div id="load"></div></div> */}
-            <ButtonContext.Provider value={ memoizedContextValue}>
-                {props.children}
-            </ButtonContext.Provider>
+        <div id='outer'>
+            <div className="btn" id='bt1' tabIndex={1} style={style} onClick={clickbtn}>
+                <ButtonContext.Provider value={ memoizedContextValue}>
+                    {props.children}
+                </ButtonContext.Provider>
+                <div id="divLoad"><div id="load"><img id='svg' src={shape}/></div></div>
+            </div>
         </div>
     );
 }
