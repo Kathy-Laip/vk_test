@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.blockBtn{
+  margin: auto;
+
+
+  display: flex;
+  flex-direction: row;
+
+  margin-bottom: 2rem;
+}
+
+.btn{
+  height: 91px;
+  width: 393px;
+
+  padding: 48px;
+  margin-left: 40px;
+  margin-right: 40px;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  border-radius: 16px;
+
+  color: white;
+
+  display: flex;
+  justify-content: space-around;
+
+  align-items: center;
+
+  position: relative;
+
+  transition: opacity 1s;
+  transition-timing-function: cubic-bezier(0, -0.3, 0.5, 1.3);
+  transition-duration: 500 ms;
+}
+
+
+
+.btn:hover{
+  opacity: 88%;
+}
+
+.btn:active{
+  opacity: 80%;
+}
+
+.btn:focus{
+  border: 3px solid white;
+  outline: 3px solid dodgerblue;
+}
+
+
+#load {
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid white;
+  border-top-color: transparent;
+  animation: Rotate .3s linear infinite;
+}
+
+@keyframes Rotate {
+  from {transform: rotate(-360deg);}
+}
+
+
+.label{
+  display: -webkit-box;
+  -webkit-line-clamp: 1; 
+  line-clamp: 1; 
+  -webkit-box-orient: vertical;
+
+  display: block;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.counter{
+
+}
